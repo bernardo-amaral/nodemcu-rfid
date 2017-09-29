@@ -37,3 +37,14 @@ No menu Ferramentas -> Placas, selecione a placa NodeMCU 1.0 (ESP 12-E module)
 Transfira o programa normalmente para o NodeMCU, do mesmo jeito que você faz com as outras placas Arduino.
 
 No menu da IDE, em Arquivo -> Exemplos, serão adicionados vários exemplos de uso das placas ESP8266, como webserver, httpclient e DNS, entre outros.
+
+# MÓDULO RFID
+
+- Baixe a biblioteca [AQUI](https://github.com/miguelbalboa/rfid)
+- Coloque-a dentro do diretório de bibliotecas do Arduino, e reinicie a IDE
+- Conecte o módulo RFID RF522 ao Arduino seguindo o esquema abaixo:
+
+![Schematic](https://raw.githubusercontent.com/bernardo-amaral/nodemcu-rfid/master/schematic.png)
+
+- Suba o código para a placa, e visualize os resultados no monitor serial.
+ ###### Para mais detalhes, veja o tutorial na integra em: [MFRC522 RFID Reader Interfaced With NodeMCU](http://www.instructables.com/id/MFRC522-RFID-Reader-Interfaced-With-NodeMCU/)
