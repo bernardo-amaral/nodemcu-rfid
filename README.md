@@ -49,3 +49,7 @@ No menu da IDE, em Arquivo -> Exemplos, serão adicionados vários exemplos de u
 
 - Suba o código para a placa, e visualize os resultados no monitor serial.
  ###### Para mais detalhes, veja o tutorial na integra em: [MFRC522 RFID Reader Interfaced With NodeMCU](http://www.instructables.com/id/MFRC522-RFID-Reader-Interfaced-With-NodeMCU/)
+
+ # PROBLEMAS ENCONTRADOS
+
+  - A minha placa ficava em looping tomando soft reset e não entrada no modo de leitura do RFID, a solução que encontrei foi desconectar o pino RST do NodeMCU.
