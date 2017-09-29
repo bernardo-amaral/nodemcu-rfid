@@ -1,7 +1,3 @@
-/*
- *  Created by TheCircuit`
-*/
-
 #define SS_PIN D2
 #define RST_PIN D1
 
@@ -17,28 +13,26 @@ const char* password = "evolve which fir titan assam";
 WiFiClient espClient;
 PubSubClient client(espClient);
 
-MFRC522 mfrc522(SS_PIN, RST_PIN); 
+MFRC522 mfrc522(SS_PIN, RST_PIN);
 int statuss = 0;
 int out = 0;
 
-void setup() 
+void setup()
 {
-  Serial.begin(9600);  
+  Serial.begin(9600);
   setup_wifi();
-  
-  SPI.begin();      
+
+  SPI.begin();
   mfrc522.PCD_Init();
 }
-void loop() 
+void loop()
 {
-  // Look for new cards
-  if ( ! mfrc522.PICC_IsNewCardPresent()) 
-  {
+
+  if (!mfrc522.PICC_IsNewCardPresent()) {
     return;
   }
-  // Select one of the cards
-  if ( ! mfrc522.PICC_ReadCardSerial()) 
-  {
+
+  if (!mfrc522.PICC_ReadCardSerial()) {
     return;
   }
   //Show UID on serial monitor
@@ -53,7 +47,7 @@ void loop()
      content.concat(String(mfrc522.uid.uidByte[i], HEX));
   }
   content.toUpperCase();
-  
+
   Serial.println();
   if (content.substring(1) == "02 29 85 59") {
     Serial.println(" Access Granted ");
@@ -66,7 +60,7 @@ void loop()
     Serial.println(" Access Denied ");
     delay(3000);
   }
-} 
+}
 
 
 //Método de conexão com rede WIFI
