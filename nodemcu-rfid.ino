@@ -7,8 +7,8 @@
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
 
-const char* ssid = "twguest";
-const char* password = "evolve which fir titan assam";
+const char* ssid = "SSID";
+const char* password = "PASSWORD";
 
 WiFiClient espClient;
 PubSubClient client(espClient);
