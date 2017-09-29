@@ -1,7 +1,8 @@
-# HOW TO INSTALL
+# INSTALANDO O NODEMCU
 
 - Baixe o driver pro seu sistema operacional no repositório: https://github.com/nodemcu/nodemcu-devkit/tree/master/Drivers
-- Baixe o UART BRidge para realizar a comunicação com o nodeMCU: https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers
+- Baixe o UART Bridge para realizar a comunicação com o nodeMCU: https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers
+###### (Só funcionou após a instalação deste segundo)
 
 # Configuração da IDE do Arduino para o NodeMCU
 ###### (Texto extraído do [Blog do FelipeFlop](https://www.filipeflop.com/blog/programar-nodemcu-com-ide-arduino/))
