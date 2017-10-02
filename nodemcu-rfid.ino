@@ -87,7 +87,7 @@ void setup_wifi() {
 bool check_access(String hexKey) {
   if (espClient.connect('nodemcu-rfid.herokuapp.com', 80)) {
     Serial.println("*** connected to the webserver ***");
-    espClient.println("GET /search?q=" + hexKey + " HTTP/1.1");
+    espClient.println("GET /api/rfid/" + hexKey + " HTTP/1.1");
     espClient.println("Host: nodemcu-rfid.herokuapp.com");
     espClient.println("Connection: close");
     return true;
