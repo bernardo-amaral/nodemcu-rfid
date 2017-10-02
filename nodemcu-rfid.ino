@@ -1,11 +1,10 @@
-#define SS_PIN D2
-#define RST_PIN D1
-
 #include <SPI.h>
 #include <MFRC522.h>
-
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
+
+#define SS_PIN D2
+#define RST_PIN D1
 
 const char* ssid = "SSID";
 const char* password = "PASSWORD";
@@ -49,6 +48,11 @@ void loop()
   content.toUpperCase();
 
   Serial.println();
+  if (check_access(content.substring(1))) {
+    Serial.println("Access Granted by the Webserver");
+  }
+
+
   if (content.substring(1) == "02 29 85 59") {
     Serial.println(" Access Granted ");
     Serial.println(" Welcome Mr.Circuit ");
@@ -78,4 +82,14 @@ void setup_wifi() {
   Serial.println("WiFi conectado");
   Serial.println("Endereco IP : ");
   Serial.println(WiFi.localIP());
+}
+
+bool check_access(String hexKey) {
+  if (espClient.connect('nodemcu-rfid.herokuapp.com', 80)) {
+    Serial.println("*** connected to the webserver ***");
+    espClient.println("GET /search?q=" + hexKey + " HTTP/1.1");
+    espClient.println("Host: nodemcu-rfid.herokuapp.com");
+    espClient.println("Connection: close");
+    return true;
+  }
 }
